@@ -4,7 +4,7 @@
 
 (deftest namespace-loads
   (testing "the restored CLJC namespace loads"
-    (is (some? (the-ns 'cartpole-wasm)))))
+    (is (some? (find-ns 'cartpole-wasm)))))
 
 ;; Port of the single original Rust #[test] `handle_lifecycle`:
 ;;   let mut h = CartpoleHandle::new();
