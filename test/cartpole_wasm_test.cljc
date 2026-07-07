@@ -3,4 +3,4 @@
             [cartpole_wasm]))
 (deftest namespace-loads
   (testing "the restored CLJC namespace loads"
-    (is (some? cartpole_wasm))))
+    (is (some? (find-ns 'cartpole_wasm)))))
