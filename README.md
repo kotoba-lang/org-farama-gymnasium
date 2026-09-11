@@ -40,5 +40,5 @@ truncation at the step budget, dim/version constants) and the namespace smoke te
 ## Develop
 
 ```bash
-clojure -M:test
+kbb -M:test
 ```
