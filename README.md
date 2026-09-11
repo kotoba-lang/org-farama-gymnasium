@@ -12,7 +12,7 @@ demonstrator for Phase C of ADR-2605261800 (KAMI canonical Rust -> wasm32 -> JS/
 RL env). The crate's own `lib.rs` contained no cartpole physics itself — it was pure
 wasm-bindgen boundary glue delegating to `kami_shugyo`.
 
-To preserve real computational content rather than just glue, `src/cartpole_wasm.cljc` ports
+To preserve real computational content rather than just glue, `src/cartpole_wasm.cljk` ports
 the classic Barto/Sutton/Anderson cartpole equations of motion (the same dynamics
 `kami_shugyo::CartpoleEnv` implements) as pure, zero-dependency CLJC data + functions, matching
 the original JS-facing API surface:
@@ -30,7 +30,7 @@ pure dynamics / EDN IR for the domain.
 
 ## Tests
 
-`test/cartpole_wasm_test.cljc` ports the single original Rust `#[test] handle_lifecycle`
+`test/cartpole_wasm_test.cljk` ports the single original Rust `#[test] handle_lifecycle`
 (reset returns a 4-vector, step returns a 7-vector) plus additional coverage of the ported
 dynamics (determinism, reset perturbation bounds, force response, termination on tip-over,
 truncation at the step budget, dim/version constants) and the namespace smoke test.
